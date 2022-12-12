@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ToggleUI : MonoBehaviour
 {
+    public Material materialM;
+    public Image image;
      public GameObject _settings;
      Image _arrow;
      Animator _dropAnimator;
@@ -33,6 +35,8 @@ public class ToggleUI : MonoBehaviour
             _dropEnabled = true;
             _arrow.sprite = _sprites[1];
             _settings.SetActive(true);
+            image.material = materialM;
+            
 
         }
         else
