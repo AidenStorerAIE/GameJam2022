@@ -39,4 +39,12 @@ public class LineManager : MonoBehaviour
         string localPath = "Assets/Prefabs/" + lineParent.gameObject.name + ".prefab";
         PrefabUtility.SaveAsPrefabAsset(lineParent, localPath);
     }
-}
+    public void Undo()
+    {
+        if (lines.Count > 0)
+        {
+            Destroy(lines[lines.Count - 1]);
+            lines.RemoveAt(lines.Count - 1);
+        }
+    }
+    }
