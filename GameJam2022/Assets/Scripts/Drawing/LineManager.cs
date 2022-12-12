@@ -6,7 +6,7 @@ using UnityEditor;
 public class LineManager : MonoBehaviour
 {
     public List<GameObject> lines;
-    public GameObject lineParent;
+    public List<GameObject> lineParents;
     public int layerCount;
     // Start is called before the first frame update
     void Start()
@@ -35,8 +35,11 @@ public class LineManager : MonoBehaviour
         {
             line.transform.localPosition = new Vector3(line.transform.localPosition.x, line.transform.localPosition.y, 0);
         }
-        string localPath = "Assets/Prefabs/" + lineParent.gameObject.name + ".prefab";
-        PrefabUtility.SaveAsPrefabAsset(lineParent, localPath);
+        foreach (var line in lineParents)
+        {
+            string localPath = "Assets/Prefabs/" + line.gameObject.name + ".prefab";
+            PrefabUtility.SaveAsPrefabAsset(line, localPath);
+        }
     }
     //public void Undo()
     //{

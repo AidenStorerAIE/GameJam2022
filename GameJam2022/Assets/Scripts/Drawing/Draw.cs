@@ -22,28 +22,24 @@ public class Draw : MonoBehaviour
     public void Update()
     {
         Drawing();
-        foreach (var c in canvases)
+        foreach (GameObject c in canvases)
         {
             if (c.GetComponent<CanvasScript>().isEnabled)
             {
                 currentCanvas = c;
-            }
-            else
-            {
-                currentCanvas = null;
             }
         }
     }
 
     void Drawing()
     {
-        foreach (GameObject canvas in canvases)
+        if (currentCanvas != null)
         {
-            if (canvas.GetComponent<CanvasScript>().isEnabled == false)
+            if (currentCanvas.GetComponent<CanvasScript>().isEnabled == false)
             {
                 check = false;
             }
-            if (canvas.GetComponent<CanvasScript>().isEnabled == true)
+            if (currentCanvas.GetComponent<CanvasScript>().isEnabled == true)
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
