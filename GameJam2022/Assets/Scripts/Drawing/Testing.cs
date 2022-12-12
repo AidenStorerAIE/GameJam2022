@@ -24,12 +24,13 @@ public class Testing : MonoBehaviour
         {
             background.SetActive(false);
             character.GetComponent<Animator>().enabled = true;
+            character.GetComponent<Animator>().SetBool("Test", true);
             test = true;
         }
         else if (test)
         {
             background.SetActive(true);
-            character.GetComponent<Animator>().enabled = false;
+            character.GetComponent<Animator>().SetBool("Test", false);
             test = false;
         }
     }

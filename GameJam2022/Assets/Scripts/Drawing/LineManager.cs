@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public class LineManager : MonoBehaviour
 {
@@ -37,9 +38,14 @@ public class LineManager : MonoBehaviour
         }
         foreach (var line in lineParents)
         {
+            line.GetComponent<MeshCollider>().enabled = false;
             string localPath = "Assets/Prefabs/" + line.gameObject.name + ".prefab";
             PrefabUtility.SaveAsPrefabAsset(line, localPath);
         }
+    }
+    public void Play()
+    {
+        SceneManager.LoadScene("TestScene", LoadSceneMode.Single);
     }
     //public void Undo()
     //{
@@ -49,4 +55,4 @@ public class LineManager : MonoBehaviour
     //        lines.RemoveAt(lines.Count - 1);
     //    }
     //}
-    }
+}
