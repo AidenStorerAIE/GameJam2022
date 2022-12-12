@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour
     public static int currentHealth;
     private Health health;
     public static Player Instance;
+    public float healthSliderValue;
     private void Awake()
     {
         if (Instance == null)
@@ -17,12 +19,13 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
+        
         // get components
         health = GetComponent<Health>();
 
         // set values
         currentHealth = maxHealth;
-        health.maxHealth = maxHealth;
+        health.maxHealth = healthSliderValue;
     }
 
 }
