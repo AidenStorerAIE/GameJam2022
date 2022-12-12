@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         MovePlayer();
+        if (Input.GetButtonDown("Jump") && hangtimeCounter > 0f)
+            Jump();
 
         // ground check
         bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
@@ -44,8 +46,7 @@ public class PlayerMovement : MonoBehaviour
             direction.y += gravity * Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump") && hangtimeCounter > 0f)
-            Jump();
+       
 
     }
     public void MovePlayer()

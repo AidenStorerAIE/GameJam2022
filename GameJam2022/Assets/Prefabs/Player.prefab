@@ -62,8 +62,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpHeight: 10
-  numberOfJumps: 1
   gravity: -20
+  hangtime: 0.1
   groundCheck: {fileID: 3006089871804406873}
   groundLayer:
     serializedVersion: 2
@@ -145,7 +145,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b94e1938ec051da43a85c59c1558d511, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
