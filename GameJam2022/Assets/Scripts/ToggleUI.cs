@@ -15,7 +15,9 @@ public class ToggleUI : MonoBehaviour
     {
         _dropAnimator = GetComponent<Animator>();
         _arrow = GameObject.Find("Arrow").GetComponent<Image>();
-        _settings = GameObject.Find("Settings");
+        _settings = GameObject.Find("Movement Settings");
+        _settings.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -32,14 +34,18 @@ public class ToggleUI : MonoBehaviour
             _dropEnabled = true;
             _arrow.sprite = _sprites[1];
             _settings.SetActive(true);
+            _settings.SetActive(true);
+
 
         }
         else
         {
             _dropAnimator.SetTrigger("Up");
             _dropEnabled=false;
-            _arrow.sprite = _sprites[0];  
+            _arrow.sprite = _sprites[0];
+            _settings.SetActive(false);
+
         }
-        
+
     }
 }

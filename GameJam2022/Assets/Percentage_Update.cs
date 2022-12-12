@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Percentage_Update : MonoBehaviour
 {
     // Start is called before the first frame update
-    Text _percentageText;
+    private Text _percentageText;
     void Start()
     {
         _percentageText = GetComponent<Text>();

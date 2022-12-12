@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,12 +20,17 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
 
+    [Header("Sliders")]
+    public float mSliderValue;
+    public float jSliderValue;
+    public float gSliderValue;
+    public float hSliderValue;
+
     private void Start()
     {
         // get components
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-
         // set default values
     }
     private void Update()
@@ -35,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         // ground check
         bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
         if (isGrounded)
-            hangtimeCounter = hangtime;
+            hangtimeCounter = (hangtime*hSliderValue);
         else
             hangtimeCounter -= Time.deltaTime;
     }
@@ -47,13 +53,13 @@ public class PlayerMovement : MonoBehaviour
     public void MovePlayer()
     {
         float input = Input.GetAxis("Horizontal");
-        direction.x = input * moveSpeed;
+        direction.x = input * (moveSpeed*mSliderValue);
 
         rb.velocity = new Vector3(direction.x, rb.velocity.y, rb.velocity.z);
     }
     public void Jump()
     {
         hangtimeCounter = 0f;
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        rb.AddForce(Vector3.up * (jumpForce *jSliderValue), ForceMode.Impulse);
     }
 }
