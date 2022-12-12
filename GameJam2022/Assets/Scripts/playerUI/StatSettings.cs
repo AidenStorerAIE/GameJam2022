@@ -10,11 +10,11 @@ public class StatSettings : MonoBehaviour
     /*public Slider sliderAD;
     public Slider sliderDD;*/
     public PlayerMovement pM;
-    public Player P;
+    public Health H;
     void Start()
     {
         pM = GameObject.FindObjectOfType<PlayerMovement>().GetComponent<PlayerMovement>();
-        P = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
+        H = GameObject.FindObjectOfType<Health>().GetComponent<Health>();
         sliderH.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
 /*        sliderAD.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
         sliderDD.onValueChanged.AddListener(delegate { ValueChangeCheck(); });*/
@@ -24,7 +24,7 @@ public class StatSettings : MonoBehaviour
         Debug.Log("JS = " + sliderH.value);
 
 
-        P.healthSliderValue = sliderH.value;
+        H.healthSliderValue = sliderH.value;
 
 
         // Update is called once per frame
