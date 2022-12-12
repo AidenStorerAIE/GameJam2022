@@ -6,11 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Control Variables")]
     public float moveSpeed;
-    public float jumpHeight;
-    public float gravity;
+    public float jumpForce;
 
-    private CharacterController controller;
-    private Vector3 direction;
+    private Rigidbody rb;
+    private Vector3 direction;    
 
     [Header("Ground Check")]
     public float hangtime = 0.1f;
@@ -18,47 +17,43 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
+    private Animator animator;
+
     private void Start()
     {
         // get components
-        controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
 
         // set default values
     }
     private void Update()
     {
         MovePlayer();
-        if (Input.GetButtonDown("Jump") && hangtimeCounter > 0f)
-            Jump();
+        MyInput();
 
         // ground check
         bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
-
         if (isGrounded)
-        {
             hangtimeCounter = hangtime;
-            direction.y -= 1 * Time.deltaTime;
-        }
         else
-        {
             hangtimeCounter -= Time.deltaTime;
-            // apply gravity
-            direction.y += gravity * Time.deltaTime;
-        }
-
-       
-
+    }
+    public void MyInput()
+    {
+        if (Input.GetButtonDown("Jump") && hangtimeCounter > 0f)
+            Jump();
     }
     public void MovePlayer()
     {
         float input = Input.GetAxis("Horizontal");
         direction.x = input * moveSpeed;
 
-        controller.Move(direction * Time.deltaTime);
+        rb.velocity = new Vector3(direction.x, rb.velocity.y, rb.velocity.z);
     }
     public void Jump()
     {
         hangtimeCounter = 0f;
-        direction.y = jumpHeight;
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 }
