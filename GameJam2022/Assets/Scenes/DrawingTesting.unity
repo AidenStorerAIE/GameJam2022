@@ -880,6 +880,7 @@ MonoBehaviour:
   - {fileID: 453195102}
   - {fileID: 453195101}
   layerCount: 0
+  sceneName: DuplicateTestScene
 --- !u!4 &378190576
 Transform:
   m_ObjectHideFlags: 0

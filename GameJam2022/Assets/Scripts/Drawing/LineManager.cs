@@ -9,6 +9,7 @@ public class LineManager : MonoBehaviour
     public List<GameObject> lines;
     public List<GameObject> lineParents;
     public int layerCount;
+    public string sceneName;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +46,7 @@ public class LineManager : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene("TestScene", LoadSceneMode.Single);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
     //public void Undo()
     //{
