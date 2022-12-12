@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 15552909}
   - component: {fileID: 15552908}
   - component: {fileID: 15552907}
+  - component: {fileID: 15552911}
   m_Layer: 0
   m_Name: ArtCanvas
   m_TagString: Untagged
@@ -219,6 +220,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &15552911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15552906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ab23262f4620e40806a419afccb067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnabled: 0
 --- !u!1 &32968785
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +779,9 @@ MonoBehaviour:
   m_camera: {fileID: 32968787}
   brush: {fileID: 3596769736159038442, guid: 75263f10cde987543a6bed891d6ff8c4, type: 3}
   colorPicker: {fileID: 0}
+  canvases:
+  - {fileID: 15552906}
+  currentCanvas: {fileID: 0}
   check: 0
 --- !u!4 &341429093
 Transform:
@@ -842,6 +859,7 @@ MonoBehaviour:
   lines: []
   lineParent: {fileID: 368621309}
   layerCount: 0
+  i: 0
 --- !u!4 &378190576
 Transform:
   m_ObjectHideFlags: 0

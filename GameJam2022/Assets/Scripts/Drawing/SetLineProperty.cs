@@ -8,6 +8,7 @@ public class SetLineProperty : MonoBehaviour
     public ColorPicker colorPicker;
     public Slider slider;
     public LineManager lineManager;
+    public Draw draw;
     private Gradient gradient;
     private GradientColorKey[] gck = new GradientColorKey[2];
     private GradientAlphaKey[] gak = new GradientAlphaKey[2];
@@ -15,6 +16,8 @@ public class SetLineProperty : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        draw =FindObjectOfType<Draw>();
+        transform.parent = draw.currentCanvas.transform;
         slider = FindObjectOfType<Slider>();
         colorPicker = FindObjectOfType<ColorPicker>();
         lineManager = FindObjectOfType<LineManager>();
@@ -26,9 +29,9 @@ public class SetLineProperty : MonoBehaviour
         gak[0].alpha = 255;
         gak[1].alpha = 255;
         gradient.SetKeys(gck, gak);
-        lineManager.lines.Add(this.gameObject);
         GetComponent<LineRenderer>().SetWidth(slider.value / 10, slider.value / 10);
         GetComponent<LineRenderer>().colorGradient = gradient;
+        lineManager.lines.Add(this.gameObject);
     }
 
     // Update is called once per frame

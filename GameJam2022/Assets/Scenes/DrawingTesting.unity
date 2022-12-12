@@ -765,6 +765,9 @@ MonoBehaviour:
   m_camera: {fileID: 32968787}
   brush: {fileID: 3596769736159038442, guid: 75263f10cde987543a6bed891d6ff8c4, type: 3}
   colorPicker: {fileID: 0}
+  canvases:
+  - {fileID: 15552906}
+  currentCanvas: {fileID: 0}
   check: 0
 --- !u!4 &341429093
 Transform:
@@ -840,8 +843,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines: []
-  lineParent: {fileID: 368621309}
+  lineParent: {fileID: 15552906}
   layerCount: 0
+  i: 0
 --- !u!4 &378190576
 Transform:
   m_ObjectHideFlags: 0
