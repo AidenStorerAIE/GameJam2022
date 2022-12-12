@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingSlider : MonoBehaviour
+public class MovementSliders : MonoBehaviour
 {
     public Slider sliderMS;
     public Slider sliderJS;

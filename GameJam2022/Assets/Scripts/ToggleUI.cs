@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ToggleUI : MonoBehaviour
 {
-     GameObject _settings;
+     public GameObject _settings;
      Image _arrow;
      Animator _dropAnimator;
      bool _dropEnabled = false;
@@ -15,7 +15,6 @@ public class ToggleUI : MonoBehaviour
     {
         _dropAnimator = GetComponent<Animator>();
         _arrow = GameObject.Find("Arrow").GetComponent<Image>();
-        _settings = GameObject.Find("Movement Settings");
         _settings.SetActive(false);
         
     }
@@ -34,8 +33,6 @@ public class ToggleUI : MonoBehaviour
             _dropEnabled = true;
             _arrow.sprite = _sprites[1];
             _settings.SetActive(true);
-            _settings.SetActive(true);
-
 
         }
         else
