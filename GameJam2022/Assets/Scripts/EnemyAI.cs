@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour
     public float turnSpeed;
     [Header("Attack Properties")]
     public float attackRange = 1.0f;
+    private Weapon weapon;
 
     public Transform groundCheck;
     Player player;
@@ -20,11 +21,19 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         player = Player.Instance;
+        weapon = GetComponent<Weapon>();
     }
-
+    
     void Update()
     {
         Think();
+
+        if (player)
+        {
+            float dist = Vector3.Distance(transform.position, player.transform.position);
+            if (dist < attackRange)
+                Attack();
+        }
     }
     void Think()
     {
@@ -47,12 +56,17 @@ public class EnemyAI : MonoBehaviour
         }
         else if (type == AIType.Chase)
         {
-
+            
         }
         else if (type == AIType.Guard)
         {
 
         }
+    }
+    void Attack()
+    {
+        if(weapon)
+            weapon.Attack();
     }
     void MoveEnemy()
     {
@@ -60,6 +74,6 @@ public class EnemyAI : MonoBehaviour
     }
     void TurnEnemy()
     {
-        direction *= -1;
+        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
     }
 }

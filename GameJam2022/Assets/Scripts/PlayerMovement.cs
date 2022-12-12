@@ -14,9 +14,10 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ground Check")]
     public float hangtime = 0.1f;
-    private float hangtimeCounter;
+    public float hangtimeCounter;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public bool isGrounded;
 
     private Animator animator;
 

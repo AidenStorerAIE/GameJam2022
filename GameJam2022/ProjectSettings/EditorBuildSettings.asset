@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/DrawingTesting.unity
+    guid: 76eff07448b19984aabc7a8765e0aac5
+  - enabled: 1
+    path: Assets/Scenes/TestScene.unity
+    guid: e1084b074e392c84ca61c8252984f3a1
+  - enabled: 1
+    path: Assets/Scenes/DuplicateTestScene.unity
+    guid: 1a38ad71cdbcc0f4cb8a0b13a6832ba1
   m_configObjects: {}

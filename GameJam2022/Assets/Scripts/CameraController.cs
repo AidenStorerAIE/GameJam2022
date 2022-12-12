@@ -15,13 +15,16 @@ public class CameraController : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
     private void LateUpdate()
-    {        
-        Vector3 desitedPos = target.position + positionOffset;
-        Vector3 smoothedPos = Vector3.SmoothDamp(camera.transform.position, desitedPos, ref velocity, smoothSpeed);
-        camera.transform.position = smoothedPos;
+    {
+        if (target != null)
+        {
+            Vector3 desitedPos = target.position + positionOffset;
+            Vector3 smoothedPos = Vector3.SmoothDamp(camera.transform.position, desitedPos, ref velocity, smoothSpeed);
+            camera.transform.position = smoothedPos;
 
-        if (lookAt)
-            camera.transform.LookAt(target.position + lookOffset);
+            if (lookAt)
+                camera.transform.LookAt(target.position + lookOffset);
+        }
     }
 
 }
