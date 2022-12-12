@@ -10,7 +10,9 @@ public class Health : MonoBehaviour
     public ValueDisplay healthbar; //healthbar
     public bool showAtFull = false;
 
+    [Header("Effects")]
     public GameObject hitEffect;
+    public GameObject deathEffect;
 
     [System.NonSerialized]
     public bool isDead = false;
@@ -57,13 +59,15 @@ public class Health : MonoBehaviour
                 GameObject newEffect = Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
                 Destroy(newEffect, 2f);
             }
-                //health is capped
-                if (currentHealth < 0)
-                currentHealth = 0;
+            //health is capped
+            if (currentHealth < 0)
+            currentHealth = 0;
 
             // dies
             if (currentHealth == 0)
             {
+                UpdateUI();
+
                 isDead = true;
                 OnDeath();
                 return;
@@ -81,7 +85,19 @@ public class Health : MonoBehaviour
     }
     void OnDeath()
     {
-       
+        if (gameObject.tag == "Enemy")
+        {
+            if (deathEffect)
+            {
+                GameObject newEffect = Instantiate(deathEffect, transform.position, hitEffect.transform.rotation);
+                Destroy(newEffect, 2f);
+            }
+            Destroy(gameObject);
+        }
+        else if(gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetHealth(int health)

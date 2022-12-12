@@ -200,6 +200,7 @@ MonoBehaviour:
   healthbar: {fileID: 0}
   showAtFull: 0
   hitEffect: {fileID: 4538622876124161310, guid: 95ebb7e3eee2f934187df2d3216b56a7, type: 3}
+  deathEffect: {fileID: 4538622876124161310, guid: cdfa60ea3188bc1429bcd6c85b5a05c8, type: 3}
 --- !u!65 &1301505796292837222
 BoxCollider:
   m_ObjectHideFlags: 0
