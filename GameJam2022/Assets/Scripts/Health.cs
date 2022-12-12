@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [System.NonSerialized]
     public float currentHealth;
-    [System.NonSerialized]
     public float maxHealth;
 
     public ValueDisplay healthbar; //healthbar
     public bool showAtFull = false;
-    
+
+    public GameObject hitEffect;
+
     [System.NonSerialized]
     public bool isDead = false;
 
@@ -52,9 +52,13 @@ public class Health : MonoBehaviour
         {  
             // damage is done            
             currentHealth -= (damage);
-
-            //health is capped
-            if (currentHealth < 0)
+            if (hitEffect)
+            {
+                GameObject newEffect = Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
+                Destroy(newEffect, 2f);
+            }
+                //health is capped
+                if (currentHealth < 0)
                 currentHealth = 0;
 
             // dies
@@ -67,7 +71,7 @@ public class Health : MonoBehaviour
             UpdateUI();
         }
     }
-    void UpdateUI()
+    public void UpdateUI()
     {
         if (healthbar)
         {

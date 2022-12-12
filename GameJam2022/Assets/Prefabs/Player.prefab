@@ -62,7 +62,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d27c9b0d5e9884ead7e8cef2ef6adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
 --- !u!114 &3778606157664050992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,8 +93,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f56576c3caecba14fb3c30505368ac38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 10
   healthbar: {fileID: 0}
-  showAtFull: 0
+  showAtFull: 1
+  hitEffect: {fileID: 4538622876124161310, guid: a16938b14e8a0e34a9a6e8d6cb7d4c9a, type: 3}
 --- !u!54 &7272083477190696620
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int maxHealth;
-    public static int currentHealth;
-    private Health health;
     public static Player Instance;
     private void Awake()
     {
@@ -18,11 +15,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         // get components
-        health = GetComponent<Health>();
-
-        // set values
-        currentHealth = maxHealth;
-        health.maxHealth = maxHealth;
+        
     }
 
 }
