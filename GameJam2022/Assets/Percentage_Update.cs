@@ -20,6 +20,30 @@ public class Percentage_Update : MonoBehaviour
 
     public void TextUpdate(float value)
     {
-        _percentageText.text = Mathf.RoundToInt(value*100)+"%";
+        tag = _percentageText.tag;
+        switch(tag)
+        {
+            case "Health":
+                _percentageText.text = Mathf.RoundToInt(value)+"";
+                break;
+            case "Move":
+                _percentageText.text = Mathf.RoundToInt(value) + "";
+                break;
+            case "Jump":
+                _percentageText.text = Mathf.RoundToInt(value) + "";
+                break;
+            case "Hang":
+                _percentageText.text = value.ToString("F2") + "s";
+                break;
+            case "AD":
+                _percentageText.text = Mathf.RoundToInt(value) + "";
+                break;
+            case "Gravity":
+                _percentageText.text = Mathf.RoundToInt(value) + "";
+                break;
+        }
+        
+        }
+        
     }
-}
+
