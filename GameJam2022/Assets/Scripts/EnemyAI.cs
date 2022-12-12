@@ -23,7 +23,7 @@ public class EnemyAI : MonoBehaviour
         player = Player.Instance;
         weapon = GetComponent<Weapon>();
     }
-
+    
     void Update()
     {
         Think();
@@ -56,7 +56,7 @@ public class EnemyAI : MonoBehaviour
         }
         else if (type == AIType.Chase)
         {
-
+            
         }
         else if (type == AIType.Guard)
         {
