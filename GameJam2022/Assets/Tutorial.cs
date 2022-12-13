@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trigger : MonoBehaviour
+public class Tutorial : MonoBehaviour
 {
-    public LevelManager levelManager;
-    public bool check;
+    AudioSource _aiden;
+    private bool check;
     // Start is called before the first frame update
     void Start()
     {
+        _aiden = GetComponent<AudioSource>();
         check = true;
     }
 
@@ -17,15 +18,14 @@ public class Trigger : MonoBehaviour
     {
         
     }
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if(other.tag == "Player")
         {
-            if (check == true)
-                {
-                levelManager.jump.maxValue = 20;
-                levelManager.speed.maxValue = 20;
-                levelManager.build.GetComponent<Animator>().SetTrigger("BuildUp");
+            if (check)
+            {
+                _aiden.Play();
                 check = false;
             }
         }
