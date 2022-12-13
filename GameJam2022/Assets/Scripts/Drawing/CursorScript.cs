@@ -23,12 +23,12 @@ public class CursorScript : MonoBehaviour
         {
             i = (int)slider.value;
         }
-        if (cursorPosition.x < -3.5f && check == true)
+        if (cursorPosition.x < -2f && check == true)
         {
             UpdateToPointCursor();
             check = false;
         }
-        if (cursorPosition.x >= -3.5f && check == false)
+        if (cursorPosition.x >= -2f && check == false)
         {
             UpdateCursor();
             check = true;
