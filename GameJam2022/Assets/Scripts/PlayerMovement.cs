@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     public float jSliderValue;
     public float gSliderValue;
     public float hSliderValue;
+  /*  public float ADSliderValue;
+    public float DDSliderValue; */
 
     private void Start()
     {

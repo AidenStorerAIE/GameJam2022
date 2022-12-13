@@ -10,6 +10,9 @@ public class Health : MonoBehaviour
     public ValueDisplay healthbar; //healthbar
     public bool showAtFull = false;
 
+    public StatSettings stats;
+    public float healthSliderValue;
+
     [Header("Effects")]
     public GameObject hitEffect;
     public GameObject deathEffect;
@@ -21,8 +24,8 @@ public class Health : MonoBehaviour
     {
         if (healthbar == null)
             healthbar = GetComponentInChildren<ValueDisplay>();
-
         currentHealth = maxHealth;
+        healthSliderValue = currentHealth;
         UpdateUI();
     }
     private void Update()
@@ -54,6 +57,7 @@ public class Health : MonoBehaviour
         {  
             // damage is done            
             currentHealth -= (damage);
+            stats.sliderH.value -= (damage);
             if (hitEffect)
             {
                 GameObject newEffect = Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
@@ -100,7 +104,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         maxHealth = health;
         currentHealth = health;
