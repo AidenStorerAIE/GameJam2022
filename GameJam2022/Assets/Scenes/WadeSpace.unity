@@ -577,6 +577,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1271373035126410273, guid: 4eb382fb230040042b80cd7387f717e0, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 4538622876124161310, guid: cdfa60ea3188bc1429bcd6c85b5a05c8, type: 3}
     - target: {fileID: 1778288219224905467, guid: 4eb382fb230040042b80cd7387f717e0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1061,6 +1065,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1941925464 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3778606157664050992, guid: 4eb382fb230040042b80cd7387f717e0, type: 3}
+  m_PrefabInstance: {fileID: 924379415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db704245b1d32054ab7ecccde69c7006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1960391808 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8492833993093129283, guid: 503443c29cc814e45a7046d19e259442, type: 3}
@@ -1262,6 +1277,14 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1540353551}
+    - target: {fileID: 8492833993093129283, guid: 503443c29cc814e45a7046d19e259442, type: 3}
+      propertyPath: H
+      value: 
+      objectReference: {fileID: 1620023240}
+    - target: {fileID: 8492833993093129283, guid: 503443c29cc814e45a7046d19e259442, type: 3}
+      propertyPath: pM
+      value: 
+      objectReference: {fileID: 1941925464}
     - target: {fileID: 8492833993444542787, guid: 503443c29cc814e45a7046d19e259442, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

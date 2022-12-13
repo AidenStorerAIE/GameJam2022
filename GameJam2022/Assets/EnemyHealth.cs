@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     public float currentHealth;
     public float maxHealth;
@@ -10,10 +11,8 @@ public class Health : MonoBehaviour
     public ValueDisplay healthbar; //healthbar
     public bool showAtFull = false;
 
-    public StatSettings stats;
+    public EnemyStats stats;
     public float healthSliderValue;
-
-    public RespawnManager respawnManager;
 
     [Header("Effects")]
     public GameObject hitEffect;
@@ -26,7 +25,6 @@ public class Health : MonoBehaviour
     {
         if (healthbar == null)
             healthbar = GetComponentInChildren<ValueDisplay>();
-        respawnManager = FindObjectOfType<RespawnManager>();
         currentHealth = maxHealth;
         healthSliderValue = currentHealth;
         UpdateUI();
@@ -41,7 +39,7 @@ public class Health : MonoBehaviour
                 healthbar.gameObject.SetActive(true);
         }
 
-    }    
+    }
     public void Heal(int heal)
     {
         if (currentHealth < maxHealth && !isDead)
@@ -57,11 +55,10 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage)
     {
         if (!isDead)
-        {  
+        {
             // damage is done            
             currentHealth -= (damage);
-            if(stats)
-                stats.sliderH.value -= (damage);
+            stats.sliderH.value -= (damage);
             if (hitEffect)
             {
                 GameObject newEffect = Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
@@ -69,7 +66,7 @@ public class Health : MonoBehaviour
             }
             //health is capped
             if (currentHealth < 0)
-            currentHealth = 0;
+                currentHealth = 0;
 
             // dies
             if (currentHealth == 0)
@@ -79,7 +76,7 @@ public class Health : MonoBehaviour
                 isDead = true;
                 OnDeath();
                 return;
-            }           
+            }
             UpdateUI();
         }
     }
@@ -102,11 +99,9 @@ public class Health : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if(gameObject.tag == "Player")
+        else if (gameObject.tag == "Player")
         {
-            transform.position = respawnManager.spawnsPoints[respawnManager.spawnsPoints.Count - 1].transform.position;
-            currentHealth = maxHealth;
-            isDead = false;
+            Destroy(gameObject);
         }
     }
 
@@ -117,3 +112,5 @@ public class Health : MonoBehaviour
         UpdateUI();
     }
 }
+// Start is called before the first frame update
+

@@ -77,10 +77,16 @@ MonoBehaviour:
   moveSpeed: 10
   jumpForce: 10
   hangtime: 0.1
+  hangtimeCounter: 0
   groundCheck: {fileID: 3006089871804406873}
   groundLayer:
     serializedVersion: 2
     m_Bits: 1024
+  isGrounded: 0
+  mSliderValue: 0
+  jSliderValue: 0
+  gSliderValue: 0
+  hSliderValue: 0
 --- !u!114 &1271373035126410273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +103,10 @@ MonoBehaviour:
   maxHealth: 10
   healthbar: {fileID: 0}
   showAtFull: 1
+  stats: {fileID: 0}
+  healthSliderValue: 0
   hitEffect: {fileID: 4538622876124161310, guid: a16938b14e8a0e34a9a6e8d6cb7d4c9a, type: 3}
+  deathEffect: {fileID: 0}
 --- !u!54 &7272083477190696620
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class Percentage_Update : MonoBehaviour
     void Start()
     {
         _percentageText = GetComponent<Text>();
+        if(GetComponentInParent<Slider>())
+            TextUpdate(GetComponentInParent<Slider>().value);
     }
 
     // Update is called once per frame
@@ -51,6 +53,12 @@ public class Percentage_Update : MonoBehaviour
                 _percentageText.text = Mathf.RoundToInt(value * 10) + "";
                 break;
             case "Look":
+                _percentageText.text = Mathf.RoundToInt(value * 10) + "";
+                break;
+            case "Damage":
+                _percentageText.text = Mathf.RoundToInt(value * 10) + "";
+                break;
+            case "AttackSp":
                 _percentageText.text = Mathf.RoundToInt(value * 10) + "";
                 break;
         }
