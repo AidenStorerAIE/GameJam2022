@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 
 public class LineManager : MonoBehaviour
@@ -30,19 +29,6 @@ public class LineManager : MonoBehaviour
         }
         lines.Clear();
         layerCount = 0;
-    }
-    public void Save()
-    {
-        foreach (var line in lines)
-        {
-            line.transform.localPosition = new Vector3(line.transform.localPosition.x, line.transform.localPosition.y, 0);
-        }
-        foreach (var line in lineParents)
-        {
-            line.GetComponent<MeshCollider>().enabled = false;
-            string localPath = "Assets/Prefabs/" + line.gameObject.name + ".prefab";
-            PrefabUtility.SaveAsPrefabAsset(line, localPath);
-        }
     }
     public void Play()
     {
