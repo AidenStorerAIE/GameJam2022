@@ -11,6 +11,10 @@ TagManager:
   - AD
   - Gravity
   - Hang
+  - Smooth
+  - Yoffset
+  - Xoffset
+  - Look
   layers:
   - Default
   - TransparentFX

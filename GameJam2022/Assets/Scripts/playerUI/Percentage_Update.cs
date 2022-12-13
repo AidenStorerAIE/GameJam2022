@@ -41,6 +41,18 @@ public class Percentage_Update : MonoBehaviour
             case "Gravity":
                 _percentageText.text = Mathf.RoundToInt(value) + "";
                 break;
+            case "Smooth":
+                _percentageText.text =  Mathf.RoundToInt(value * 10) + "";
+                break;
+            case "Xoffset":
+                _percentageText.text = Mathf.RoundToInt(value * 10) + "";
+                break;
+            case "Yoffset":
+                _percentageText.text = Mathf.RoundToInt(value * 10) + "";
+                break;
+            case "Look":
+                _percentageText.text = Mathf.RoundToInt(value * 10) + "";
+                break;
         }
         
         }
