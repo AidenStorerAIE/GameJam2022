@@ -8,7 +8,7 @@ public class EnemyEditor : MonoBehaviour
 {
     public EnemyAI enemy;
     public Weapon weapon;
-    public Health health;
+    public EnemyHealth health;
 
     public GameObject weaponMenu;
     public GameObject enemyMenu;

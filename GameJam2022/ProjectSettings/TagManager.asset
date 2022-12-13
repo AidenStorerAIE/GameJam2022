@@ -15,6 +15,10 @@ TagManager:
   - Yoffset
   - Xoffset
   - Look
+  - UI
+  - Damage
+  - AttackSp
+  - EHealth
   layers:
   - Default
   - TransparentFX

@@ -53,6 +53,12 @@ public class Percentage_Update : MonoBehaviour
             case "Look":
                 _percentageText.text = Mathf.RoundToInt(value * 10) + "";
                 break;
+            case "Damage":
+                _percentageText.text = Mathf.RoundToInt(value * 10) + "";
+                break;
+            case "AttackSp":
+                _percentageText.text = Mathf.RoundToInt(value * 10) + "";
+                break;
         }
         
         }

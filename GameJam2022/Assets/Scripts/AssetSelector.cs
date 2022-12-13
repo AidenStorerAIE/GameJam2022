@@ -48,7 +48,7 @@ public class AssetSelector : MonoBehaviour
 
                     enemyMenu.enemy = hit.collider.GetComponent<EnemyAI>();
                     enemyMenu.weapon = hit.collider.GetComponent<Weapon>();
-                    enemyMenu.health = hit.collider.GetComponent<Health>();
+                    enemyMenu.health = hit.collider.GetComponent<EnemyHealth>();
 
                     enemyMenu.OnEnemySelect();
                     enemyMenu.gameObject.SetActive(true);
