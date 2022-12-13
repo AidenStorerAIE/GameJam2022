@@ -40,6 +40,10 @@ public class Health : MonoBehaviour
             else
                 healthbar.gameObject.SetActive(true);
         }
+        if (transform.position.y < -5)
+        {
+            OnDeath();
+        }
 
     }    
     public void Heal(int heal)
