@@ -43,16 +43,11 @@ public class EnemyAI : MonoBehaviour
 
             RaycastHit hit;
             Physics.Raycast(groundCheck.position, Vector3.down, out hit, 1f, LayerMask.GetMask("Ground"));
-
             if (hit.collider == null)
-            {
                 TurnEnemy();
-            }
-            else
-            {
-               //MoveEnemy();
-            }
-
+            Physics.Raycast(groundCheck.position, transform.forward, out hit, 0.2f, LayerMask.GetMask("Ground"));
+            if (hit.collider != null)
+                TurnEnemy();
         }
         else if (type == AIType.Chase)
         {
