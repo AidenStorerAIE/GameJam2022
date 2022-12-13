@@ -16,12 +16,15 @@ public class Health : MonoBehaviour
     [Header("Effects")]
     public GameObject hitEffect;
     public GameObject deathEffect;
+    AudioManager aM;
 
     [System.NonSerialized]
     public bool isDead = false;
 
     void Start()
     {
+        aM = GameObject.FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
+
         if (healthbar == null)
             healthbar = GetComponentInChildren<ValueDisplay>();
         currentHealth = maxHealth;
@@ -96,11 +99,14 @@ public class Health : MonoBehaviour
                 GameObject newEffect = Instantiate(deathEffect, transform.position, hitEffect.transform.rotation);
                 Destroy(newEffect, 2f);
             }
+            aM.PlayDeath();
             Destroy(gameObject);
+            
         }
         else if(gameObject.tag == "Player")
         {
             Destroy(gameObject);
+            aM.PlayDeath();
         }
     }
 

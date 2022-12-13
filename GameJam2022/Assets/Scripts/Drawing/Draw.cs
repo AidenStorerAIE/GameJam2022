@@ -9,6 +9,7 @@ public class Draw : MonoBehaviour
     public List<GameObject> canvases;
     public GameObject currentCanvas;
     public bool check;
+    AudioManager aM;
 
     LineRenderer currentLineRenderer;
 
@@ -16,6 +17,7 @@ public class Draw : MonoBehaviour
 
     public void Start()
     {
+        aM=GameObject.FindObjectOfType<AudioManager>();
         colorPicker = FindObjectOfType<ColorPicker>();
     }
 
@@ -38,6 +40,8 @@ public class Draw : MonoBehaviour
             if (currentCanvas.GetComponent<CanvasScript>().isEnabled == false)
             {
                 check = false;
+                aM.Cancel();
+
             }
             if (currentCanvas.GetComponent<CanvasScript>().isEnabled == true)
             {
@@ -45,14 +49,18 @@ public class Draw : MonoBehaviour
                 {
                     check = true;
                     CreateBrush();
+                    aM.PlayDraw();
+
                 }
                 else if (Input.GetKey(KeyCode.Mouse0) && check == true)
                 {
                     PointToMousePos();
+
                 }
                 else
                 {
                     currentLineRenderer = null;
+                    aM.Cancel();
                 }
             }
         }

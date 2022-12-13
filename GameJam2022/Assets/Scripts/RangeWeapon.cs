@@ -25,7 +25,9 @@ public class RangeWeapon : Weapon
 
     [Header("Effects")]
     public ParticleSystem muzzleFlash;
-
+    public void Start()
+    {
+    }
     public override void OnAttack()
     {
         FireWeapon();

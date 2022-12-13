@@ -43,7 +43,9 @@ public class PlayerMovement : MonoBehaviour
         // ground check
         bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
         if (isGrounded)
-            hangtimeCounter = (hangtime*hSliderValue);
+        {
+            hangtimeCounter = (hangtime * hSliderValue);
+        }
         else
             hangtimeCounter -= Time.deltaTime;
     }
@@ -58,10 +60,12 @@ public class PlayerMovement : MonoBehaviour
         direction.x = input * (moveSpeed*mSliderValue);
 
         rb.velocity = new Vector3(direction.x, rb.velocity.y, rb.velocity.z);
+
     }
     public void Jump()
     {
         hangtimeCounter = 0f;
         rb.AddForce(Vector3.up * (jumpForce *jSliderValue), ForceMode.Impulse);
+
     }
 }
