@@ -3,7 +3,17 @@ guid: 96dc5326e6941e043baae699acf0652d
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree_buches
+    second: {fileID: 2100000, guid: c52528025f6ec6848898e2b0972bef8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert9
+    second: {fileID: 2100000, guid: 4b7256b6462251744a4e2773eab3c721, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
