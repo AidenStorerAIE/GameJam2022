@@ -31,10 +31,14 @@ public class Projectile : MonoBehaviour
     }
     public void OnTriggerEnter(Collider collider)
     {
-        if (!hasExploded)
+        if(collider.GetComponent<Health>() != null)
         {
-            collider.transform.GetComponent<Health>().TakeDamage(explosionDamage / 2);
-            Explode();
+            if (!hasExploded)
+            {
+                collider.transform.GetComponent<Health>().TakeDamage(explosionDamage / 2);
+                Explode();
+            }
+
         }
     }
     void Explode()

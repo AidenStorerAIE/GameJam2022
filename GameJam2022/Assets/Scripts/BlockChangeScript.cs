@@ -29,6 +29,7 @@ public class BlockChangeScript : MonoBehaviour
         right.SetActive(false);        
         bottomLeft.SetActive(false);
         bottomRight.SetActive(false);
+        GetComponent<BoxCollider>().enabled = true;
     }
     public void Bottom()
     {
@@ -38,6 +39,7 @@ public class BlockChangeScript : MonoBehaviour
         right.SetActive(false);
         bottomLeft.SetActive(false);
         bottomRight.SetActive(false);
+        GetComponent<BoxCollider>().enabled = false;
     }
     public void Left()
     {
@@ -47,6 +49,7 @@ public class BlockChangeScript : MonoBehaviour
         right.SetActive(false);
         bottomLeft.SetActive(false);
         bottomRight.SetActive(false);
+        GetComponent<BoxCollider>().enabled = true;
     }
     public void Right()
     {
@@ -56,6 +59,7 @@ public class BlockChangeScript : MonoBehaviour
         right.SetActive(true);
         bottomLeft.SetActive(false);
         bottomRight.SetActive(false);
+        GetComponent<BoxCollider>().enabled = true;
     }
     public void Center()
     {
@@ -65,6 +69,7 @@ public class BlockChangeScript : MonoBehaviour
         right.SetActive(true);
         bottomLeft.SetActive(false);
         bottomRight.SetActive(false);
+        GetComponent<BoxCollider>().enabled = true;
     }
     public void BottomLeft()
     {
@@ -74,6 +79,7 @@ public class BlockChangeScript : MonoBehaviour
         right.SetActive(false);
         bottomLeft.SetActive(true);
         bottomRight.SetActive(false);
+        GetComponent<BoxCollider>().enabled = true;
     }
     public void BottomRight()
     {
@@ -83,6 +89,7 @@ public class BlockChangeScript : MonoBehaviour
         right.SetActive(false);
         bottomLeft.SetActive(false);
         bottomRight.SetActive(true);
+        GetComponent<BoxCollider>().enabled = true;
     }
     public void BottomCenter()
     {
@@ -92,5 +99,6 @@ public class BlockChangeScript : MonoBehaviour
         right.SetActive(false);
         bottomLeft.SetActive(true);
         bottomRight.SetActive(true);
+        GetComponent<BoxCollider>().enabled = true;
     }
 }
