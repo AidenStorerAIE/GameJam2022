@@ -22,7 +22,7 @@ public class Percentage_Update : MonoBehaviour
 
     public void TextUpdate(float value)
     {
-        tag = _percentageText.tag;
+      
         switch(tag)
         {
             case "Health":
@@ -61,6 +61,10 @@ public class Percentage_Update : MonoBehaviour
             case "AttackSp":
                 _percentageText.text = Mathf.RoundToInt(value * 10) + "";
                 break;
+            case "stomp":
+                _percentageText.text = Mathf.RoundToInt(value)+"";
+                break ;
+
         }
         
         }

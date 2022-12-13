@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public float jSliderValue;
     public float gSliderValue;
     public float hSliderValue;
+    public float stompSliderValue;
     /*  public float ADSliderValue;
       public float DDSliderValue; */
    
@@ -58,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (nearbyObject.GetComponent<Health>())
             {
-                nearbyObject.GetComponent<Health>().TakeDamage(stompDamage);
+                nearbyObject.GetComponent<Health>().TakeDamage(stompDamage * stompSliderValue);
                 Jump(3);
             }
         }

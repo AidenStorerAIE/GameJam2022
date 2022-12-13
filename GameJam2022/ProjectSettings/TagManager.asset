@@ -19,6 +19,8 @@ TagManager:
   - Damage
   - AttackSp
   - EHealth
+  - AudioManager
+  - stomp
   layers:
   - Default
   - TransparentFX
