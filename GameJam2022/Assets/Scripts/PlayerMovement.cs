@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Control Variables")]
     public float moveSpeed;
     public float jumpForce;
-
+    public int stompDamage = 1;
     private Rigidbody rb;
     private Vector3 direction;    
 
@@ -26,9 +26,9 @@ public class PlayerMovement : MonoBehaviour
     public float jSliderValue;
     public float gSliderValue;
     public float hSliderValue;
-  /*  public float ADSliderValue;
-    public float DDSliderValue; */
-
+    /*  public float ADSliderValue;
+      public float DDSliderValue; */
+   
     private void Start()
     {
         // get components
@@ -44,14 +44,29 @@ public class PlayerMovement : MonoBehaviour
         // ground check
         bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
         if (isGrounded)
-            hangtimeCounter = (hangtime*hSliderValue);
+            hangtimeCounter = (hangtime * hSliderValue);
         else
+        {
+            CheckStomp();
             hangtimeCounter -= Time.deltaTime;
+        }
     }
+    void CheckStomp()
+    {
+        Collider[] targets = Physics.OverlapSphere(transform.position, 0.5f, LayerMask.GetMask("Enemy"));
+        foreach (Collider nearbyObject in targets)
+        {
+            if (nearbyObject.GetComponent<Health>())
+            {
+                nearbyObject.GetComponent<Health>().TakeDamage(stompDamage);
+                Jump(3);
+            }
+        }
+    }    
     public void MyInput()
     {
         if (Input.GetButtonDown("Jump") && hangtimeCounter > 0f)
-            Jump();
+            Jump(jumpForce * jSliderValue);
     }
     public void MovePlayer()
     {
@@ -60,9 +75,10 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector3(direction.x, rb.velocity.y, rb.velocity.z);
     }
-    public void Jump()
+    public void Jump(float force)
     {
+        Debug.Log("Jump");
         hangtimeCounter = 0f;
-        rb.AddForce(Vector3.up * (jumpForce *jSliderValue), ForceMode.Impulse);
+        rb.AddForce(Vector3.up * (force), ForceMode.Impulse);
     }
 }

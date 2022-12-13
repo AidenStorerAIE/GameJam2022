@@ -80,7 +80,6 @@ public class AssetSelector : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100))
         {
             Debug.Log(hit.transform.name);
-            Debug.Log("hit");
         }
 
         return hit;

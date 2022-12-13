@@ -57,7 +57,8 @@ public class Health : MonoBehaviour
         {  
             // damage is done            
             currentHealth -= (damage);
-            stats.sliderH.value -= (damage);
+            if(stats)
+                stats.sliderH.value -= (damage);
             if (hitEffect)
             {
                 GameObject newEffect = Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
