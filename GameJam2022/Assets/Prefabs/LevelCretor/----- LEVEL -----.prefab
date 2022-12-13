@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4014410909480819407}
   - component: {fileID: 8550141767757744816}
   - component: {fileID: 1311669723930888648}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 571081585051974157}
   - component: {fileID: 515257588287114817}
   - component: {fileID: 448975556542894450}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 8252573976571061099}
   - component: {fileID: 7541419534745119928}
   - component: {fileID: 1667711108851236631}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5386017604973778578}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 2378181201915781209}
   - component: {fileID: 974023861142110729}
   - component: {fileID: 3132589614515499263}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 5726965383382397254}
   - component: {fileID: 7213050305913461240}
   - component: {fileID: 8663538778662268055}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4781539904484358902}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 1028416954867230993}
   - component: {fileID: 7908476279363378665}
   - component: {fileID: 6535275974572015792}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5312556276401146535}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BottomEdgeR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 5652131663658724003}
   - component: {fileID: 2789859335809334963}
   - component: {fileID: 1926513454839594376}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Perma(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1926513454839594376
 MonoBehaviour:
@@ -709,7 +709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3316815319013620113}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EdgeR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +772,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 94469184110156591}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EdgeL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +806,7 @@ GameObject:
   - component: {fileID: 4431508590448485184}
   - component: {fileID: 2012437726389174842}
   - component: {fileID: 8048848528895803019}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -887,7 +887,7 @@ GameObject:
   - component: {fileID: 1342609611073819520}
   - component: {fileID: 4977723890530898364}
   - component: {fileID: 5469819711121029995}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +968,7 @@ GameObject:
   - component: {fileID: 6249853421107706668}
   - component: {fileID: 4814755283505836414}
   - component: {fileID: 3710198105136053973}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1047,7 +1047,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2742803220236216964}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BottomEdgeL
   m_TagString: Untagged
   m_Icon: {fileID: 0}

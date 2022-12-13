@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     public float hangtimeCounter;
     public Transform groundCheck;
     public LayerMask groundLayer;
-    public bool isGrounded;
 
     private Animator animator;
 

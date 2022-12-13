@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 523368946282692211}
-  - component: {fileID: 6016422253607452927}
   - component: {fileID: 1527702624131352164}
   - component: {fileID: 3778606157664050992}
   - component: {fileID: 1271373035126410273}
   - component: {fileID: 7272083477190696620}
+  - component: {fileID: 2213188450599051240}
   m_Layer: 0
   m_Name: PlayerAnims
   m_TagString: Player
@@ -37,19 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6016422253607452927
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778288219224905467}
-  m_Material: {fileID: 13400000, guid: bd5304ba59644894ba9806c2d0a2e60d, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1527702624131352164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +69,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1024
-  isGrounded: 0
   mSliderValue: 1
   jSliderValue: 1
   gSliderValue: 0
@@ -121,6 +107,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 120
   m_CollisionDetection: 1
+--- !u!136 &2213188450599051240
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778288219224905467}
+  m_Material: {fileID: 13400000, guid: bd5304ba59644894ba9806c2d0a2e60d, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.34202796
+  m_Height: 1.6619513
+  m_Direction: 1
+  m_Center: {x: 0.05346495, y: 0.21699154, z: -0.014413953}
 --- !u!1 &3081378979464605872
 GameObject:
   m_ObjectHideFlags: 0
