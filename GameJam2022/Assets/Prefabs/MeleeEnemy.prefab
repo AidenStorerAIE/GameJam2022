@@ -124,7 +124,6 @@ GameObject:
   - component: {fileID: 3225730041911666426}
   - component: {fileID: 6683336608234574048}
   - component: {fileID: 1301505796292837222}
-  - component: {fileID: 3253429744564742826}
   m_Layer: 0
   m_Name: MeleeEnemy
   m_TagString: Enemy
@@ -197,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 2
+  maxHealth: 10
   healthbar: {fileID: 0}
   showAtFull: 0
   stats: {fileID: 0}
@@ -217,26 +216,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3253429744564742826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6475331010955045218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07647d2d83d531c40abc3e4d2edd3bb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 0
-  healthbar: {fileID: 0}
-  showAtFull: 0
-  stats: {fileID: 0}
-  healthSliderValue: 0
-  hitEffect: {fileID: 0}
-  deathEffect: {fileID: 0}
 --- !u!1 &7708319659350937728
 GameObject:
   m_ObjectHideFlags: 0

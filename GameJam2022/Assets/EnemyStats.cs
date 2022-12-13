@@ -10,7 +10,6 @@ public class EnemyStats : MonoBehaviour
     public Slider sliderD;
     public Slider sliderAS;
     public EnemyEditor EE;
-    public EnemyHealth EH;
     public GameObject enemy;
     void Start()
     {
@@ -25,7 +24,6 @@ public class EnemyStats : MonoBehaviour
         Debug.Log("JS = " + sliderH.value);
 
 
-        EH.healthSliderValue = sliderH.value;
 
 
         // Update is called once per frame

@@ -10,6 +10,8 @@ public class Percentage_Update : MonoBehaviour
     void Start()
     {
         _percentageText = GetComponent<Text>();
+        if(GetComponentInParent<Slider>())
+            TextUpdate(GetComponentInParent<Slider>().value);
     }
 
     // Update is called once per frame

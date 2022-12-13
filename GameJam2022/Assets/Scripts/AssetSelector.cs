@@ -36,8 +36,7 @@ public class AssetSelector : MonoBehaviour
             {
                 if (!EventSystem.current.IsPointerOverGameObject())
                 {
-                    assetMenu.SetActive(false);
-                    enemyMenu.gameObject.SetActive(false);
+                    CloseMenu();
                 }
             }
             else
@@ -45,32 +44,34 @@ public class AssetSelector : MonoBehaviour
                 if (hit.collider.GetComponent<EnemyAI>() && !EventSystem.current.IsPointerOverGameObject())
                 {
                     assetMenu.SetActive(true);
+                    enemyMenu.gameObject.SetActive(true);
 
                     enemyMenu.enemy = hit.collider.GetComponent<EnemyAI>();
                     enemyMenu.weapon = hit.collider.GetComponent<Weapon>();
-                    enemyMenu.health = hit.collider.GetComponent<EnemyHealth>();
+                    enemyMenu.health = hit.collider.GetComponent<Health>();
 
                     enemyMenu.OnEnemySelect();
-                    enemyMenu.gameObject.SetActive(true);
                 }
-                else
+                else if(!EventSystem.current.IsPointerOverGameObject())
                 {
-                    assetMenu.SetActive(false);
-                    enemyMenu.gameObject.SetActive(false);
+                    CloseMenu();
                 }
-            }
+            }            
         }
-        if(enemyMenu.enabled && enemyMenu.enemy == null)
+        if (enemyMenu.enabled && enemyMenu.enemy == null)
         {
-            assetMenu.SetActive(false);
-            enemyMenu.gameObject.SetActive(false);
-
-            // null all variables
-            enemyMenu.health = null;
-            enemyMenu.enemy = null;
-            enemyMenu.weapon = null;
+            CloseMenu();
         }
+    }
+    void CloseMenu()
+    {
+        assetMenu.SetActive(false);
+        enemyMenu.gameObject.SetActive(false);
 
+        // null all variables
+        enemyMenu.health = null;
+        enemyMenu.enemy = null;
+        enemyMenu.weapon = null;
     }
     private RaycastHit GetMousePos()
     {

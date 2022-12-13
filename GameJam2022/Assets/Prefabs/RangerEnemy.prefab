@@ -124,7 +124,6 @@ GameObject:
   - component: {fileID: 2556158715422036771}
   - component: {fileID: 6809044237246593998}
   - component: {fileID: 1211061705544176712}
-  - component: {fileID: 1074135701174890803}
   m_Layer: 0
   m_Name: RangerEnemy
   m_TagString: Enemy
@@ -161,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8adb8675dd9e1cb41993870268a0469b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   activeRange: 10
   moveSpeed: 10
   turnSpeed: 10
@@ -222,26 +221,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1074135701174890803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6565563995571651148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07647d2d83d531c40abc3e4d2edd3bb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 0
-  healthbar: {fileID: 0}
-  showAtFull: 0
-  stats: {fileID: 0}
-  healthSliderValue: 0
-  hitEffect: {fileID: 0}
-  deathEffect: {fileID: 0}
 --- !u!1 &7509784779536645038
 GameObject:
   m_ObjectHideFlags: 0
