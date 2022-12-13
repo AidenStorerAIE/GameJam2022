@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class AssetSelector : MonoBehaviour
 {
@@ -33,23 +34,43 @@ public class AssetSelector : MonoBehaviour
 
             if (hit.collider == null)
             {
-                //assetMenu.SetActive(false);
-                //enemyMenu.SetActive(false);
-            }         
-
-            if (hit.collider.GetComponent<EnemyAI>())
-            {
-                assetMenu.SetActive(true);
-                enemyMenu.enemy = hit.collider.GetComponent<EnemyAI>();
-                enemyMenu.gameObject.SetActive(true);
+                if (!EventSystem.current.IsPointerOverGameObject())
+                {
+                    assetMenu.SetActive(false);
+                    enemyMenu.gameObject.SetActive(false);
+                }
             }
             else
             {
-                //assetMenu.SetActive(false);
-                //enemyMenu.SetActive(false);
-            }                   
-              
+                if (hit.collider.GetComponent<EnemyAI>() && !EventSystem.current.IsPointerOverGameObject())
+                {
+                    assetMenu.SetActive(true);
+
+                    enemyMenu.enemy = hit.collider.GetComponent<EnemyAI>();
+                    enemyMenu.weapon = hit.collider.GetComponent<Weapon>();
+                    enemyMenu.health = hit.collider.GetComponent<Health>();
+
+                    enemyMenu.OnEnemySelect();
+                    enemyMenu.gameObject.SetActive(true);
+                }
+                else
+                {
+                    assetMenu.SetActive(false);
+                    enemyMenu.gameObject.SetActive(false);
+                }
+            }
         }
+        if(enemyMenu.enabled && enemyMenu.enemy == null)
+        {
+            assetMenu.SetActive(false);
+            enemyMenu.gameObject.SetActive(false);
+
+            // null all variables
+            enemyMenu.health = null;
+            enemyMenu.enemy = null;
+            enemyMenu.weapon = null;
+        }
+
     }
     private RaycastHit GetMousePos()
     {
