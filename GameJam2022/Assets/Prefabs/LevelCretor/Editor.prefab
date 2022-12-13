@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6697366588548620126
 Transform:
   m_ObjectHideFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6697366588548620122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27, y: 4, z: 0}
+  m_LocalPosition: {x: 29, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7454595060820793648}
@@ -139,16 +139,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c53d22f694c724cb2bb21c445c388b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorPosition: {x: -27.294592, y: 4.386773}
-  cursorPositionRounded: {x: -27, y: 4}
-  lastCursorPositionRounded: {x: -27, y: 4}
+  cursorPosition: {x: 2.420702, y: 5.018036}
+  cursorPositionOnScreen: {x: -2043.0062, y: 973.9479}
+  cursorPositionRounded: {x: 29, y: -1}
+  lastCursorPositionRounded: {x: 29, y: -1}
+  lastCursorPositionRoundedForBlockPlacing: {x: 37, y: -4}
   m_camera: {fileID: 0}
   tempBlock: {fileID: 6697366588548620122}
-  permaBlock: {fileID: 1605097124168095652, guid: faf5167204c8a7b459bf6854729fffb3, type: 3}
-  tempBlockLocation: {x: -27, y: 4, z: 0}
-  blockDestroyed: 0
+  permaBlock:
+  - {fileID: 1605097124168095652, guid: faf5167204c8a7b459bf6854729fffb3, type: 3}
+  - {fileID: 1868254656628454158, guid: 209626e46eaabb44eb54c1232bf0afd7, type: 3}
+  - {fileID: 1868254656628454158, guid: 0751b4ba7f83c234ba8166fb4cf19e35, type: 3}
+  - {fileID: 2620414802368490817, guid: 47fbe9497f060314ab18b7ad6568a2f3, type: 3}
+  - {fileID: 5929198398711365441, guid: 00cc97579b66cf3438d0eb427e1897e5, type: 3}
+  tempBlockLocation: {x: 29, y: -1, z: 0}
+  blockDestroyed: 1
   blockLocations:
   - {x: 0, y: -2, z: 0}
   blocks:
   - {fileID: 0}
+  decorLocations:
+  - {x: -3, y: -2, z: 0}
+  - {x: 9, y: 1, z: 0}
   terrainParent: {fileID: 0}
+  tBD: 112
+  destroy: 0
+  i: 0

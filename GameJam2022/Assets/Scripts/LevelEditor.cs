@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelEditor : MonoBehaviour
 {
     public Vector2 cursorPosition;
+    public Vector2 cursorPositionOnScreen;
     public Vector2 cursorPositionRounded;
     public Vector2 lastCursorPositionRounded;
     public Vector2 lastCursorPositionRoundedForBlockPlacing;
@@ -44,7 +45,8 @@ public class LevelEditor : MonoBehaviour
         }
         tempBlockLocation = tempBlock.transform.position;
         cursorPosition = m_camera.ScreenToWorldPoint(Input.mousePosition);
-        if (cursorPosition.x < -2)
+        cursorPositionOnScreen = Input.mousePosition;
+        if (cursorPositionOnScreen.x < 750)
         {
             tempBlock.SetActive(false);
         }

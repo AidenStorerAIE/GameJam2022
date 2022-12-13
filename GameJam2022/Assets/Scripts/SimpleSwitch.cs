@@ -9,6 +9,7 @@ public class SimpleSwitch : MonoBehaviour
     public GameObject editor;
     public GameObject cardBoard;
     public GameObject blockPreviews;
+    public GameObject menu;
     public bool editing;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class SimpleSwitch : MonoBehaviour
         if (editing)
         {
             playCamera.SetActive(false);
+            menu.SetActive(false);
             blockPreviews.SetActive(true);
             cardBoard.SetActive(true);
             buildCamera.SetActive(true);
@@ -37,6 +39,7 @@ public class SimpleSwitch : MonoBehaviour
         else if (!editing)
         {
             playCamera.SetActive(true);
+            menu.SetActive(true);
             blockPreviews.SetActive(false);
             buildCamera.SetActive(false);
             cardBoard.SetActive(false);

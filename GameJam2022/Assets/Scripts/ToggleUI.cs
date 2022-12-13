@@ -12,6 +12,8 @@ public class ToggleUI : MonoBehaviour
      Animator _dropAnimator;
      bool _dropEnabled = false;
      public List<Sprite> _sprites;
+    public GameObject build;
+    public GameObject sign;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,8 @@ public class ToggleUI : MonoBehaviour
             _arrow.sprite = _sprites[1];
             _settings.SetActive(true);
             image.material = materialM;
+            build.SetActive(false);
+            sign.SetActive(false);
             
 
         }
@@ -45,7 +49,8 @@ public class ToggleUI : MonoBehaviour
             _dropEnabled=false;
             _arrow.sprite = _sprites[0];
             _settings.SetActive(false);
-
+            build.SetActive(true);
+            sign.SetActive(true);
         }
 
     }
