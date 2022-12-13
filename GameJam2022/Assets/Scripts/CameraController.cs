@@ -49,4 +49,8 @@ public class CameraController : MonoBehaviour
     {
         lookOffset.z = x;
     }
+    public void SetTarget()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 }

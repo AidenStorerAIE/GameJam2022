@@ -10,7 +10,7 @@ public class DontDestroyLoad : MonoBehaviour
     public AnimationController controller;
     public List<GameObject> rigidBodies;
     // Start is called before the first frame update
-    void OnEnable()
+    void Start()
     {
         DontDestroyOnLoad(gameObject);
         player = FindObjectOfType<Player>();

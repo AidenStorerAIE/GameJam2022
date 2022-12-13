@@ -13,6 +13,8 @@ public class Health : MonoBehaviour
     public StatSettings stats;
     public float healthSliderValue;
 
+    public RespawnManager respawnManager;
+
     [Header("Effects")]
     public GameObject hitEffect;
     public GameObject deathEffect;
@@ -24,6 +26,7 @@ public class Health : MonoBehaviour
     {
         if (healthbar == null)
             healthbar = GetComponentInChildren<ValueDisplay>();
+        respawnManager = FindObjectOfType<RespawnManager>();
         currentHealth = maxHealth;
         healthSliderValue = currentHealth;
         UpdateUI();
@@ -100,7 +103,9 @@ public class Health : MonoBehaviour
         }
         else if(gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            transform.position = respawnManager.spawnsPoints[respawnManager.spawnsPoints.Count - 1].transform.position;
+            currentHealth = maxHealth;
+            isDead = false;
         }
     }
 
